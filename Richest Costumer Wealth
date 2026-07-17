@@ -1,0 +1,36 @@
+#include<iostream>
+#include<vector>
+
+using namespace std;
+class Solution {
+    public: int maximumWealth(vector < vector < int >> & accounts) {
+        int max = 0;
+        int sum = 0;
+        for (int i = 0; i < accounts.size(); i++) {
+            for (int j = 0; j < accounts[i].size(); j++) {
+                sum += accounts[i][j];
+            }
+            if (sum > max) {
+                max = sum;
+            }
+        }
+        return max;
+    }
+};
+ int main() {
+    Solution solution;
+
+    // Test Case: 3 customers, various numbers of banks
+    vector<vector<int>> accounts = {
+        {1, 2, 3}, // Customer 1 total = 6
+        {3, 2, 1}, // Customer 2 total = 6
+        {2, 8, 7}  // Customer 3 total = 17 (Richest)
+    };
+
+    // Call the function and print the result
+    int result = solution.maximumWealth(accounts);
+    
+    cout << "The maximum wealth among all customers is: " << result << endl;
+
+    return 0;
+}
