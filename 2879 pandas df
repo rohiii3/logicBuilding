@@ -1,0 +1,5 @@
+import pandas as pd
+
+def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
+    df2=employees.iloc[0:3]
+    return df2
