@@ -18,7 +18,6 @@ public:
         vector<int> ans;
         for(int i=0;i<nums.size();i++){
             ans.push_back(abs(leftsum[i]-rightsum[i]));
-
         }
         return ans;
     }
